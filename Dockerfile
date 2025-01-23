@@ -7,6 +7,9 @@ WORKDIR /app
 # Копируем файл Gradle
 COPY . .
 
+# Даем права на выполнение gradlew
+RUN chmod +x gradlew
+
 # Строим приложение
 RUN ./gradlew build -x test
 
